@@ -187,7 +187,7 @@ func (c *Cluster) create() error {
 	}
 	c.logClusterCreation()
 
-	c.gc.CollectCluster(c.cluster.Name, c.cluster.UID)
+	// c.gc.CollectCluster(c.cluster.Name, c.cluster.UID)
 
 	if c.bm != nil {
 		if err := c.bm.setup(); err != nil {
@@ -435,7 +435,7 @@ func (c *Cluster) Update(cl *spec.EtcdCluster) {
 }
 
 func (c *Cluster) delete() {
-	c.gc.CollectCluster(c.cluster.Name, garbagecollection.NullUID)
+	// c.gc.CollectCluster(c.cluster.Name, garbagecollection.NullUID)
 
 	if c.bm == nil {
 		return

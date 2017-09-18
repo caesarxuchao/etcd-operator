@@ -168,7 +168,7 @@ func run(stop <-chan struct{}) {
 		logrus.Fatalf("invalid operator config: %v", err)
 	}
 
-	go periodicFullGC(cfg.KubeCli, cfg.Namespace, gcInterval)
+	// go periodicFullGC(cfg.KubeCli, cfg.Namespace, gcInterval)
 
 	startChaos(context.Background(), cfg.KubeCli, cfg.Namespace, chaosLevel)
 
